@@ -5,7 +5,7 @@
         <link rel = "stylesheet" type = "text/css" href = "styles.css" />
         <script src = "scripts.js"></script>
     </head>
-    <body>
+    <body onload="loadFunction()">
         <div style="text-align: center;">
             <h1>Flight Simulator</h1>
             <h2>Current Flight Status</h2>
@@ -21,20 +21,21 @@
             </div>
             <div id = "shuttleBackground" style = "position: relative;">
                 <img src = "LaunchCode_rocketline_white.png" height = "75" width = "75" id = "rocket"/>
+               
             </div>
             <div style = "text-align: center; display: inline-block;">
                     <button>Up</button>
                     <button>Down</button>
-                    <button>Right</button>
+                    <button id="right">Right</button>
                     <button>Left</button>
                     <h3>Space Shuttle Height</h3>
                     <p id="spaceShuttleHeight">0</p><p style = "display: inline-block;"> miles</p>
             </div>
         </div>
         <div style="text-align: center;">
-            <button id = "takeoff">Take off</button>
-            <button id = "landing">Land</button>
-            <button id = "missionAbort">Abort Mission</button>
+            <button onclick="takeoffWindowFunction();landFunction();document.getElementById('spaceShuttleHeight').innerHTML = '10000';takeoffColorFunction()" id = "takeoff">Take off</button>
+            <button onclick="landFunction();landWindowFunction();document.getElementById('spaceShuttleHeight').innerHTML = '0';landColorFunction();" id = "landing">Land</button>
+            <button onclick="abortWindowFunction();abortFunction();document.getElementById('spaceShuttleHeight').innerHTML = '0';landColorFunction();" id = "missionAbort">Abort Mission</button>
     </div>
     </body>
 </html>
